@@ -74,7 +74,9 @@ header.page .nav1 li a:active, body > header .nav li a.active {border-bottom:1px
 	transition:opacity .3s linear;
 }
 
-.band {width:100%;margin:0;padding:0;overflow:hidden;}
+.team {background:#fff;padding-top:25px;}
+
+.band {width:100%;margin:0;padding:1em 0 0;overflow:hidden;}
 
 .visual .text {float:left;max-width:50%;padding:1em;
 	-moz-box-sizing:border-box;
@@ -143,9 +145,9 @@ img.app {margin-top:-2em;}
 .nolinks a {text-decoration:none;color:#222;}
 .nolinks a:hover {text-decoration:underline;}
 
-.prices {list-style:none;margin:0 0 1.5em;padding:0;overflow:hidden;}
-.prices li {margin:0;padding:0;width:50%;float:left;text-align:left;}
-.prices li .price {font-size:3em;width:48%;margin:0;text-align:right;float:left;font-weight:400;}
+.prices {list-style:none;margin:0 0 1.5em;padding:1em;overflow:hidden;}
+.prices li {margin:0;padding:0;width:100%;float:left;text-align:left;}
+.prices li .price {font-size:3em;width:50%;margin:0;text-align:right;float:left;font-weight:400;}
 .prices li .price:after {content:"/";font-weight:300;-webkit-font-smoothing:antialias;font-smoothing:antialias;}
 .prices li p {margin:.75em 0;text-indent:.3em;}
 .prices li p span {color:#aaa;}
