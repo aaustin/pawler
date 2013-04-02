@@ -21,115 +21,68 @@
 
 <div id="page2">
  <section class="band placed" id="benefits">
-			<ol class="benefits photoflip" id="slideshow">
-				<li class="flipitem">
-					<img src="static/placed/exercise.png" />
-					<div class="text">
-						<h1>Track exercise levels</h1>
-						<p>And get insights your pet's progress and reminders and ideas for walks and playtime  </p>
-					</div>
-				</li>
-				<li class="flipitem">
-					<img src="static/placed/peace.jpg" />
-					<div class="text">
-						<h1>Peace of mind</h1>
-						<p>Monitor levels of activity over time and easily see any potential outliers</p>
-					</div>
-				</li>
-				<li class="flipitem">
-					<img src="static/placed/away.jpg" />
-					<div class="text">
-						<h1>Track your pet while away</h1>
-						<p>By getting notifications by changes in moods, activity and sleep </p>
-					</div>
-				</li>
-			</ol>
-		</section>
+
+  <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="static/placed/exercise.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Track your pet while away.</h1>
+              <p class="lead">By getting notifications by changes in moods, activity and sleep.</p>
+              <a class="btn btn-large btn-primary" href="#">Reserve now</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="static/placed/peace.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Track exercise levels</h1>
+              <p class="lead">By getting notifications by changes in moods, activity and sleep.</p>
+              <a class="btn btn-large btn-primary" href="#">Reserve now</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="static/placed/away.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Peace of mind.</h1>
+              <p class="lead">Monitor levels of activity over time and easily see any potential outliers.</p>
+              <a class="btn btn-large btn-primary" href="#">Reserve now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+    <script type="text/javascript"> 
+        $('.carousel').carousel({ 
+          interval: 2000 
+        }) 
+</script> 
+    </section>
 
 </div>
 
 <div id="page3">
  
 </div>
-<script src="static/events.min.js"></script>
-<script src="static/anim.min.js"></script>
-<script>
-		(function (win) {
-			var doc = win.document;
-			// helpers
-			function debounce(fn, time) {
-				var t;
-				return function () {
-					var s = this,
-						a = arguments;
-					clearTimeout(t);
-					t = setTimeout(function () {
-						fn.apply(s, a);
-					}, time || 300);
-				}
-			}
-			// image slider
-			Events.ready(function () {
-				var auto = true,
-					selected = 0,
-					slideTimer = auto && setTimeout(slide, 5000),
-					elm = document.getElementById('slideshow'),
-					cn = elm.getElementsByTagName('li'),
-					w = document.createElement('div'),
-					ew = cn.length && cn[0].offsetWidth,
-					tw = (ew * cn.length - elm.parentNode.offsetWidth) * cn.length/(cn.length - 1);
-				// setup
-				elm.className += ' enabled';
-				cn[selected].className += ' active';
-				// helpers
-				function slide(d) {
-					d = d || 1;
-					var cs = parseInt(elm.style.left || 0, 10),
-						n = (selected + d) % cn.length;
-					slideTo(n);
-				}
-				function slideTo(n) {
-					selected = n;
-					slideToX(-n / cn.length * tw);
-				}
-				function slideToX(nx) {
-					clearTimeout(slideTimer);
-					anim(elm, {left: nx + 'px'}, .5).anim(function () {
-						var i, j;
-						for (i = 0, j = cn.length; i < j; i += 1) {
-							cn[i].className = i === selected ? 'flipitem active' : 'flipitem';
-						}
-						if (auto) {
-							slideTimer = setTimeout(slide, 5000);
-						}
-					});
-				}
-				// reslide on resize
-				Events.bind(win, 'resize', debounce(function () {
-					ew = cn.length && cn[0].offsetWidth;
-					tw = (ew * cn.length - elm.parentNode.offsetWidth) * cn.length/(cn.length - 1);
-					slideTo(selected);
-				}));
-				// controllers
-				w.id = 'markers';
-				w.innerHTML = '<a href="#0"></a><a href="#1"></a><a href="#2"></a>';
-				elm.parentNode.appendChild(w);
-				Events.bind(w, 'click', function (ev) {
-					var h = (ev.target.hash || "").substr(1);
-					if (h) {
-						clearTimeout(slideTimer);
-						auto = false;
-						slideTo(parseInt(h, 10));
-						ev.cancelDefault();
-					}
-				});
-				// TODO: make it so the animation only starts & works when in sight
-				/*Events.bind(document, 'scroll', function () {
-					logo.className = (window.scrollY > 60) ? '' : 'hidden';
-				});*/
-			});
-		})(this);
-		</script>
-		
+	    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.js"></script>
+      
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
 
 {% endblock %}
