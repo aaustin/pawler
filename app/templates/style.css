@@ -1,0 +1,21 @@
+html, body {border:0;padding:0;margin:0;font-family:Roboto,sans-serif;width:100%;min-height:100%;}
+body {font-size:100%;line-height:1.5;color:#444;background:#fff repeat-x 0 2em;background-position:0 50px;font-weight:300;-webkit-font-smoothing:antialias;font-smoothing:antialias;
+	background-image:-moz-linear-gradient(top, #fff, #eee 70%);
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(70%,#eee));
+	background-image:-webkit-linear-gradient(top, #fff, #eee 70%);
+	background-image:-o-linear-gradient(top, #fff, #eee 70%);
+	background-image:-ms-linear-gradient(top, #fff, #eee 70%);
+	background-image:linear-gradient(to bottom, #fff, #eee 70%);
+}
+
+a {color:#0B81A1;}
+a:visited {color:#222;}
+a:hover {color:#0FACD6;}
+form {margin:0;padding:0;}
+h1 {text-transform:uppercase;font-size:2em;margin:0;line-height:1.25;font-weight:400;}
+strong {font-weight:400;color:#222;}
+p {margin:0 0 1.5em;color:#444;}
+ul {margin:0 0 1.5em;padding-left:1.2em;}
+.connected {margin-top:-.5em;}
+.ir {text-align:left;text-indent:-1000em;}
+i {font-style:normal;}

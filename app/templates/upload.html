@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Upload Collar Data</h1>
+<form action="/upload" method="post" name="upload">
+{{form.hidden_tag()}}
+<p>
+Device ID<br>
+{{form.device_id()}}<br>
+</p>
+
+<p>
+Time<br>
+{{form.time()}}<br>
+</p>
+
+<p>
+Temp<br>
+{{form.temp()}}<br>
+</p>
+
+<p>
+accX<br>
+{{form.accX()}}<br>
+</p>
+
+<p>
+accY<br>
+{{form.accY()}}<br>
+</p>
+
+<p>
+accZ<br>
+{{form.accZ()}}<br>
+</p>
+
+<p><input type="submit" value="Upload"></p>
+</form>
+{% endblock %}

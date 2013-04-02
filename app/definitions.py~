@@ -1,0 +1,21 @@
+from flask import request, jsonify
+from database import database, Sensor
+
+def handle_upload():
+	new_sensor_data = Sensor(
+			device_id=request.form['device_id'],
+			time=request.form['time'],
+			temp=request.form['temp'],
+			accX=request.form['acc_x'],
+			accY=request.form['acc_y'],
+			accZ=request.form['acc_z'])
+	db.session.add(new_sensor_data)	
+	db.session.commit()
+	
+	data = {
+        'message'  : 'success',
+		'status' : 'uploaded'
+    }
+	resp = jsonify(data)
+	resp.status_code = 200
+	return resp

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - Pawler</title>
+    {% else %}
+    <title>Pawler</title>
+    {% endif %}
+    
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='museoslab_500_macroman/stylesheet.css') }}" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  <body>
+
+    <header class="page">
+			<nav class="wrapper">
+    <a href="/" id="logo" class="ir">Pawler</a>
+    <ol class="nav1">
+         <li class = "active"><a href="#about">Home</a></li>
+         <li><a href="#about">Benefits</a></li>
+         <li><a href="#portfolio">Features</a></li>
+         <li><a href="#contact">Order</a></li>
+     </ol>
+</nav>
+</header>
+
+    <hr>
+    {% block content %}{% endblock %}
+   
+  </body>
+</html>
